@@ -32,11 +32,10 @@ st.markdown("""
 # HEADER CON LOGO RCL
 # --------------------------------------------------
 try:
-    logo_path = r"C:\Buscador pro delanteros\BUSCADORDELANTEROS\rcl_scout_group_logo.png"
-    logo = Image.open(logo_path)
-    st.image(logo, width=200)
-except Exception:
-    st.title("RCL Scout Group")
+    logo = Image.open("rcl_scout_group_logo.png")
+    st.image(logo, width=220)
+except Exception as e:
+    st.write("Logo no encontrado en el servidor")
 
 st.subheader("Buscador Profesional de Perfiles Ofensivos | Latinoamerica 2025")
 st.divider()
@@ -124,5 +123,6 @@ if not df_filtrado.empty:
     )
 else:
     st.warning("No hay jugadores que coincidan con estos filtros.")
+
 
 st.markdown("<br><p style='text-align:center;color:#94A3B8;'>RCL Scout Group | Intelligence & Data Analysis</p>", unsafe_allow_html=True)
